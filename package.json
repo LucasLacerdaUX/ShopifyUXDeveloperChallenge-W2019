@@ -1,18 +1,20 @@
 {
-  "name": "parcel-sandbox",
+  "name": "shopify-ux-challenge-w2019",
   "version": "1.0.0",
-  "description": "Simple Parcel Sandbox",
+  "description": "Shopify's UX Developer Intern Challenge (Winter 2019)",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
-      "react": "16.4.2",
-      "react-dom": "16.4.2",
-      "react-scripts": "1.1.4"
+    "prop-types": "^15.6.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-scripts": "1.1.4"
   },
   "devDependencies": {
+    "node-sass": "^4.9.3",
     "parcel-bundler": "^1.6.1"
   }
 }
