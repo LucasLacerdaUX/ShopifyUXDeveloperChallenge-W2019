@@ -24,9 +24,9 @@ const SocialLinks = () => {
         <div className="SocialPanel">
             <span>or login with</span>
             <div className="SocialLinks">
-            <SocialLink socialName="Google">{Google}</SocialLink>
-            <SocialLink socialName="Facebook">{Facebook}</SocialLink>
-            <SocialLink socialName="Twitter">{Twitter}</SocialLink>
+            <SocialLink socialName="Login using your Google account">{Google}</SocialLink>
+            <SocialLink socialName="Login using your Facebook account">{Facebook}</SocialLink>
+            <SocialLink socialName="Login using your Twitter account">{Twitter}</SocialLink>
             </div>
         </div>
   )

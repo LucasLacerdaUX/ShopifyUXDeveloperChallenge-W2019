@@ -19,9 +19,10 @@ const Login = (props) => {
         placeholder={defaultPlaceholder}
         value={inputValue}
         onChange={onChange}
+        aria-describedby={`${inputName}-hint`}
         {...rest}
       ></input>
-      <span className="visually-hidden">{fieldDescription}</span>
+      <span className="visually-hidden" id={`${inputName}-hint`}>{fieldDescription}</span>
     </div>
   )
 }

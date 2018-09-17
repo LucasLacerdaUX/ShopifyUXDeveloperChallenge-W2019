@@ -5,6 +5,7 @@
     &:first-child input
     {
         border-radius: 10px 10px 0 0;
+        border-bottom: 2px solid $light-purple-lighter;
     }
     
     input
@@ -18,6 +19,13 @@
         border: none;
         color: $dark-purple;
     
+        &:focus
+        {
+            box-shadow: 0 0 20px rgba($dark-purple, 0.5);
+            position: relative;
+            z-index: 1;
+            outline: 0;
+        }
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: $light-purple-darker;
             opacity: 1; /* Firefox */
@@ -30,6 +38,5 @@
         &::-ms-input-placeholder { /* Microsoft Edge */
             color: $light-purple-darker;
         }
-           
     }
 }

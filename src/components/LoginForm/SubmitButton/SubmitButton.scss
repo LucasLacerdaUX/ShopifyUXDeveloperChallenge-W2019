@@ -9,4 +9,25 @@
     border-radius: 0 0 10px 10px;
     font-size: 1.25rem;
     font-weight: bold;
+    transition: background 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    cursor: pointer;
+
+    &:hover
+    {
+        background: $dark-purple-lighter;
+    }
+
+    &:active
+    {
+        background: $dark-purple-darker;
+    }
+
+    &:focus
+    {
+        background: $dark-purple-lighter;
+        box-shadow: 0 0 20px rgba($black, 0.5);
+        position: relative;
+        z-index: 1;
+        outline: 0;
+    }
 }

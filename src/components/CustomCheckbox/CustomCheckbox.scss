@@ -1,0 +1,68 @@
+@import "../../styles/global.scss";
+
+.CustomCheckbox
+{
+    input
+    {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    label {
+        cursor: pointer;
+        position: relative;
+        color: $dark-purple;
+        font-weight: bold;
+        padding-left: 2rem;
+    }
+
+    label::before,
+    label::after
+    {
+        content: ' ';
+        position: absolute;
+        box-sizing: border-box;
+    }
+
+    label::after
+    {
+        border-radius: 3px;
+        top: 0.25rem;
+        left: 0.25rem;
+        height: 1rem;
+        width: 1rem;
+        
+        @include media-breakpoint-up(desktop)
+        {
+            top: 0.22rem;
+            left: 0.22rem;
+            height: 0.8rem;
+            width: 0.8rem;
+        }
+    }
+
+    label::before
+    {
+        top: 0;
+        left: 0;
+        height: 1.5rem;
+        width: 1.5em;
+        border-radius: 4px;
+        border: 2px solid $dark-purple;
+        @include media-breakpoint-up(desktop)
+        {
+            height: 1.25rem;
+            width: 1.25em;
+        }
+    }
+
+    input:focus + label::before
+    {
+        box-shadow: 0 0 8px rgba($dark-purple-lighter, 0.8);
+    }
+
+    input:checked + label::after
+    {
+        background-color: $dark-purple;
+    }
+}
