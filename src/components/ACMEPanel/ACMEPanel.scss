@@ -6,8 +6,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 12rem;
+    padding-top: 1.5em;
+    padding-bottom: 11rem;
     @include media-breakpoint-up(desktop)
     {
         padding-top: 25vh;
@@ -31,7 +31,13 @@
 .ACMELogo
 {
     background-color: white;
-    width: 79px;
+    width: 60px;
     padding: 0.75rem;
+
+    @include media-breakpoint-up(desktop)
+    {
+        width: 79px;
+        padding: 0.75rem;
+    }
     border-radius: 10px;
 }

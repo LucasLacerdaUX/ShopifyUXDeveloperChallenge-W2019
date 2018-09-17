@@ -1,34 +1,35 @@
 @import "../../../styles/global.scss";
 
-.input
+.Input
 {
     &:first-child input
     {
         border-radius: 10px 10px 0 0;
     }
-}
-input
-{
-    width: 100%;
-    text-align: center;
-    font-size: 1.25em;
-    font-weight: bold;
-    padding: 1.25rem;
-    background: $white;
-    border: none;
-    color: $dark-purple;
-
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: $light-purple-darker;
-        opacity: 1; /* Firefox */
-    }
     
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: $light-purple-darker;
-    }
+    input
+    {
+        width: 100%;
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: bold;
+        padding: 1.25rem;
+        background: $white;
+        border: none;
+        color: $dark-purple;
     
-    &::-ms-input-placeholder { /* Microsoft Edge */
-        color: $light-purple-darker;
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $light-purple-darker;
+            opacity: 1; /* Firefox */
+        }
+        
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $light-purple-darker;
+        }
+        
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: $light-purple-darker;
+        }
+           
     }
-       
 }

@@ -3,7 +3,7 @@ import "./Input.scss";
 
 const Login = (props) => {
   return (
-    <div className="input">
+    <div className="Input">
       <label 
         htmlFor={props.inputName}
         className="visually-hidden"
