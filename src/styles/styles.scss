@@ -1,12 +1,19 @@
+@import "global.scss";
+
 html {
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+
+    font-size: 12px;
+    @include media-breakpoint-up(desktop)
+    {
+      font-size: 18px;
+    }
 }
 
-  
 html,
 body {
   width: 100%;
@@ -16,6 +23,7 @@ body {
 body {
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 *,
@@ -28,13 +36,8 @@ body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
-.visually-hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
+#app
+{
+  display: flex;
+  flex: 1;
+}

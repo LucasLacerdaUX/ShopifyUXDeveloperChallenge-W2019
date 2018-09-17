@@ -1,0 +1,14 @@
+@import "styles/global.scss";
+
+.Wrapper
+{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  
+  @include media-breakpoint-up(desktop)
+  {
+    flex-direction: row;
+  }
+}

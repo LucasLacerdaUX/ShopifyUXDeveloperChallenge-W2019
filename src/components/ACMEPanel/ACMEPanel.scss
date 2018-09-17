@@ -1,0 +1,37 @@
+@import "../../styles/global.scss";
+
+.ACMEPanel
+{
+    background: $dark-purple;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 12rem;
+    @include media-breakpoint-up(desktop)
+    {
+        padding-top: 25vh;
+        width: 50%;
+        height: auto;
+    }
+
+    h1
+    {
+        color: white;
+    }
+}
+
+.ACMELogoBox
+{
+    width: fit-content;
+    background: $purple-gradient;
+    padding: 2px;
+    border-radius: 10px;
+}
+.ACMELogo
+{
+    background-color: white;
+    width: 79px;
+    padding: 0.75rem;
+    border-radius: 10px;
+}

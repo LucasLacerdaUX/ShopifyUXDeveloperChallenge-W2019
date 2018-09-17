@@ -1,0 +1,12 @@
+@import "../../../styles/global.scss";
+
+.SubmitButton
+{
+    padding: 1.25rem;
+    border: none;
+    background: $dark-purple;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}

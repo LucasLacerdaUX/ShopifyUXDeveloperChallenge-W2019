@@ -3,7 +3,7 @@ import "./Input.scss";
 
 const Login = (props) => {
   return (
-    <React.Fragment>
+    <div className="input">
       <label 
         htmlFor={props.inputName}
         className="visually-hidden"
@@ -20,7 +20,7 @@ const Login = (props) => {
         onChange={props.onChange}
       ></input>
       <span class="visually-hidden">{props.fieldDescription}</span>
-    </React.Fragment>
+    </div>
   )
 }
 

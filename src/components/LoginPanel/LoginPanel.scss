@@ -1,0 +1,15 @@
+@import "../../styles/global.scss";
+
+.LoginPanel
+{
+    background: $light-purple-lighter;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    @include media-breakpoint-up(desktop)
+    {
+        padding-top: 25vh;
+    }
+}

@@ -19814,6 +19814,11 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"src\\index.scss":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
 },{"_css_loader":"node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"src\\components\\LoginForm\\LoginForm.scss":[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
@@ -19841,8 +19846,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Login = function Login(props) {
   return _react2.default.createElement(
-    _react2.default.Fragment,
-    null,
+    "div",
+    { className: "input" },
     _react2.default.createElement(
       "label",
       {
@@ -19869,7 +19874,12 @@ var Login = function Login(props) {
 };
 
 exports.default = Login;
-},{"react":"node_modules\\react\\index.js","./Input.scss":"src\\components\\LoginForm\\Input\\Input.scss"}],"src\\components\\LoginForm\\SubmitButton\\SubmitButton.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./Input.scss":"src\\components\\LoginForm\\Input\\Input.scss"}],"src\\components\\LoginForm\\SubmitButton\\SubmitButton.scss":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"src\\components\\LoginForm\\SubmitButton\\SubmitButton.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19880,18 +19890,20 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+require("./SubmitButton.scss");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SubmitButton = function SubmitButton() {
   return _react2.default.createElement(
     "button",
-    { className: "submitButton", type: "submit" },
-    "Submit"
+    { className: "SubmitButton", type: "submit" },
+    "login"
   );
 };
 
 exports.default = SubmitButton;
-},{"react":"node_modules\\react\\index.js"}],"src\\components\\LoginForm\\LoginForm.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./SubmitButton.scss":"src\\components\\LoginForm\\SubmitButton\\SubmitButton.scss"}],"src\\components\\LoginForm\\LoginForm.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19937,7 +19949,7 @@ var LoginForm = exports.LoginForm = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'form',
-        null,
+        { className: 'LoginForm' },
         _react2.default.createElement(_Input2.default, { inputType: 'text', inputName: 'username', required: 'true', label: 'Enter your username', defaultPlaceholder: 'username',
           fieldDescription: 'Your username is expected to be between 8 and 24 characters' }),
         _react2.default.createElement(_Input2.default, { inputType: 'password', inputName: 'password', required: 'true', label: 'Enter your password', defaultPlaceholder: 'password',
@@ -19951,7 +19963,118 @@ var LoginForm = exports.LoginForm = function (_Component) {
 }(_react.Component);
 
 exports.default = LoginForm;
-},{"react":"node_modules\\react\\index.js","./LoginForm.scss":"src\\components\\LoginForm\\LoginForm.scss","./Input/Input":"src\\components\\LoginForm\\Input\\Input.js","./SubmitButton/SubmitButton":"src\\components\\LoginForm\\SubmitButton\\SubmitButton.js"}],"src\\index.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./LoginForm.scss":"src\\components\\LoginForm\\LoginForm.scss","./Input/Input":"src\\components\\LoginForm\\Input\\Input.js","./SubmitButton/SubmitButton":"src\\components\\LoginForm\\SubmitButton\\SubmitButton.js"}],"src\\components\\ACMEPanel\\ACMEPanel.scss":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"src\\components\\ACMEPanel\\ACMEPanel.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+require("./ACMEPanel.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LogoSVG = _react2.default.createElement(
+    "svg",
+    { id: "SvgLogoAcmeStack", className: "ACMELogo", viewBox: "0 0 44 44" },
+    _react2.default.createElement(
+        "defs",
+        null,
+        _react2.default.createElement(
+            "linearGradient",
+            { id: "SvgLogoAcmeStackGradient", x1: "6.725", x2: "37.275", y1: "37.279", y2: "6.729", gradientUnits: "userSpaceOnUse" },
+            _react2.default.createElement("stop", { offset: "0", "stop-color": "#7e24fa" }),
+            _react2.default.createElement("stop", { offset: "1", "stop-color": "#caaef2" })
+        )
+    ),
+    _react2.default.createElement("path", { fill: "url(#SvgLogoAcmeStackGradient)", d: "M44 22.007a2.928 2.928 0 0 0-1.477-2.56l-1.911-1.104 1.909-1.102c.926-.534 1.479-1.49 1.479-2.559s-.552-2.025-1.477-2.56L23.482 1.121a2.961 2.961 0 0 0-2.956-.001L1.478 12.117A2.926 2.926 0 0 0 0 14.677c0 1.069.552 2.026 1.478 2.56l1.91 1.103-1.911 1.103A2.923 2.923 0 0 0 0 22.001c0 1.068.552 2.025 1.478 2.56l1.91 1.102-1.91 1.103A2.929 2.929 0 0 0 0 29.326c0 1.069.552 2.026 1.478 2.56l19.05 10.994a2.953 2.953 0 0 0 2.954-.001L42.521 31.89A2.922 2.922 0 0 0 44 29.332a2.928 2.928 0 0 0-1.477-2.56l-1.911-1.104 1.909-1.102A2.925 2.925 0 0 0 44 22.007zM21.991 3.702L41.032 14.66 22.005 25.642 7.328 17.205a1.467 1.467 0 0 0-.456-.262l-3.904-2.244L21.991 3.702zm19.041 25.607L22.017 40.298 2.968 29.349l3.401-1.964 14.159 8.172a2.963 2.963 0 0 0 2.954-.001l14.156-8.171 3.394 1.924zm-19.015 3.665L7.329 24.53a1.488 1.488 0 0 0-.458-.263l-3.903-2.243L6.37 20.06l14.158 8.171a2.953 2.953 0 0 0 2.954-.001l14.156-8.171 3.393 1.925-19.014 10.99z" })
+);
+
+var ACMEPanel = function ACMEPanel() {
+    return _react2.default.createElement(
+        "div",
+        { className: "ACMEPanel" },
+        _react2.default.createElement(
+            "h1",
+            null,
+            "AcmeStack"
+        ),
+        _react2.default.createElement(
+            "div",
+            { "class": "ACMELogoBox" },
+            LogoSVG
+        )
+    );
+};
+
+exports.default = ACMEPanel;
+},{"react":"node_modules\\react\\index.js","./ACMEPanel.scss":"src\\components\\ACMEPanel\\ACMEPanel.scss"}],"src\\components\\LoginPanel\\LoginPanel.scss":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules\\parcel-bundler\\lib\\builtins\\css-loader.js"}],"src\\components\\LoginPanel\\LoginPanel.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.LoginPanel = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _LoginForm = require('../LoginForm/LoginForm');
+
+var _LoginForm2 = _interopRequireDefault(_LoginForm);
+
+require('./LoginPanel.scss');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LoginPanel = exports.LoginPanel = function (_Component) {
+  _inherits(LoginPanel, _Component);
+
+  function LoginPanel() {
+    _classCallCheck(this, LoginPanel);
+
+    return _possibleConstructorReturn(this, (LoginPanel.__proto__ || Object.getPrototypeOf(LoginPanel)).apply(this, arguments));
+  }
+
+  _createClass(LoginPanel, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { 'class': 'LoginPanel' },
+        _react2.default.createElement(_LoginForm2.default, null)
+      );
+    }
+  }]);
+
+  return LoginPanel;
+}(_react.Component);
+
+exports.default = LoginPanel;
+},{"react":"node_modules\\react\\index.js","../LoginForm/LoginForm":"src\\components\\LoginForm\\LoginForm.js","./LoginPanel.scss":"src\\components\\LoginPanel\\LoginPanel.scss"}],"src\\index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = require("react");
@@ -19962,27 +20085,33 @@ var _reactDom = require("react-dom");
 
 require("./styles/styles.scss");
 
+require("./index.scss");
+
 var _LoginForm = require("./components/LoginForm/LoginForm");
 
 var _LoginForm2 = _interopRequireDefault(_LoginForm);
+
+var _ACMEPanel = require("./components/ACMEPanel/ACMEPanel");
+
+var _ACMEPanel2 = _interopRequireDefault(_ACMEPanel);
+
+var _LoginPanel = require("./components/LoginPanel/LoginPanel");
+
+var _LoginPanel2 = _interopRequireDefault(_LoginPanel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
   return _react2.default.createElement(
-    "div",
-    null,
-    _react2.default.createElement(
-      "h1",
-      null,
-      "Hi There"
-    ),
-    _react2.default.createElement(_LoginForm2.default, null)
+    "main",
+    { className: "Wrapper" },
+    _react2.default.createElement(_LoginPanel2.default, null),
+    _react2.default.createElement(_ACMEPanel2.default, null)
   );
 };
 
 (0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById("app"));
-},{"react":"node_modules\\react\\index.js","react-dom":"node_modules\\react-dom\\index.js","./styles/styles.scss":"src\\styles\\styles.scss","./components/LoginForm/LoginForm":"src\\components\\LoginForm\\LoginForm.js"}],"node_modules\\parcel-bundler\\lib\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","react-dom":"node_modules\\react-dom\\index.js","./styles/styles.scss":"src\\styles\\styles.scss","./index.scss":"src\\index.scss","./components/LoginForm/LoginForm":"src\\components\\LoginForm\\LoginForm.js","./components/ACMEPanel/ACMEPanel":"src\\components\\ACMEPanel\\ACMEPanel.js","./components/LoginPanel/LoginPanel":"src\\components\\LoginPanel\\LoginPanel.js"}],"node_modules\\parcel-bundler\\lib\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -20011,7 +20140,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59637' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61594' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
