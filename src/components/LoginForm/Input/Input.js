@@ -19,7 +19,7 @@ const Login = (props) => {
         value={props.inputValue}
         onChange={props.onChange}
       ></input>
-      <span class="visually-hidden">{props.fieldDescription}</span>
+      <span className="visually-hidden">{props.fieldDescription}</span>
     </div>
   )
 }

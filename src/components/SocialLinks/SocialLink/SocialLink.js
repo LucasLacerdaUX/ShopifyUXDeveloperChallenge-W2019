@@ -3,7 +3,7 @@ import "./SocialLink.scss"
 
 const SocialLink = (props) => {
   return (
-    <a class="SocialLink" href="#" title={props.socialName}>
+    <a className="SocialLink" href="#" title={props.socialName}>
         {props.children}      
     </a>
   )

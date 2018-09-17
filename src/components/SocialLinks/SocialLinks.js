@@ -21,7 +21,7 @@ const SocialLinks = () => {
     );
     
     return (
-        <div class="SocialPanel">
+        <div className="SocialPanel">
             <span>or login with</span>
             <div className="SocialLinks">
             <SocialLink socialName="Google">{Google}</SocialLink>

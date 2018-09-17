@@ -6,11 +6,12 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 export class LoginPanel extends Component {
   render() {
     return (
-      <div class="LoginPanel">
+      <div className="LoginPanel">
         <LoginForm></LoginForm>
+        <span style={{color: 'red'}}>Erro!</span>
         <div className="CustomCheckbox">
           <input type="checkbox" id="checkbox-2" name="checkboxe" />
-          <label for="checkbox-2">remember me</label>
+          <label htmlFor="checkbox-2">remember me</label>
         </div>
         <SocialLinks></SocialLinks>
       </div>
