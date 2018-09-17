@@ -37,6 +37,13 @@
         
         &::-ms-input-placeholder { /* Microsoft Edge */
             color: $light-purple-darker;
+        
+        }
+        &.invalid
+        {
+            color: $red;
+            border: 3px solid $red;
         }
     }
+
 }
