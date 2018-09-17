@@ -3,6 +3,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import "./LoginPanel.scss";
 import SocialLinks from '../SocialLinks/SocialLinks';
 import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
+import LogoutForm from '../LogoutForm/LogoutForm';
 
 class LoginPanel extends Component {
   state = {
@@ -35,15 +36,6 @@ class LoginPanel extends Component {
     loggedIn: false
   }
 
-  renderLogout()
-  {
-    return (
-      <div>
-        oi
-      </div>
-    )
-  }
-
   // Two-way binding
   handleInputChanged = (event) => {
     const field = event.target.name;
@@ -62,6 +54,8 @@ class LoginPanel extends Component {
     this.setState( { [field]: updatedState });
   }
 
+
+  // TODO: THIS IS ONLY BEING CALLED ON THE HANDLELOGIN METHOD WHEN IT ISN'T TOUCHED
   validateFields = () =>
   {
     const userInvalid = !this.state.username.valid && this.state.username.touched;
@@ -96,6 +90,11 @@ class LoginPanel extends Component {
     }
   }
 
+  handleLogout = (event) => {
+    event.preventDefault();
+    this.setState( { spinning: false, loggedIn: false });
+  }
+
   renderLogin()
   {
     return (
@@ -112,6 +111,15 @@ class LoginPanel extends Component {
         <CustomCheckbox inputName="rememberCheckBox" fieldDescription="Checking this will keep your account logged in the next time you visit this website.">remember me</CustomCheckbox>
         <SocialLinks></SocialLinks>
       </div>
+    )
+  }
+
+  renderLogout()
+  {
+    return (
+      <React.Fragment>
+        <LogoutForm logoutUser={this.handleLogout}></LogoutForm>
+      </React.Fragment>
     )
   }
 

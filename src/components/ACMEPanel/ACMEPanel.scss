@@ -18,6 +18,10 @@
     h1
     {
         color: white;
+        @include media-breakpoint-up(desktop)
+        {
+            -webkit-margin-before: 0;
+        }
     }
 }
 

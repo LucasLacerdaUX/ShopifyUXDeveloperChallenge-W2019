@@ -6,7 +6,7 @@ import SubmitButton from "./SubmitButton/SubmitButton";
 export class LoginForm extends Component {
   render() {
     return (
-      <form className="LoginForm">
+      <form className="LoginForm" onSubmit={this.props.loginUser}>
         <Input isInvalid={!this.props.username.valid && this.props.username.touched} 
                inputType="text" 
                inputName="username" 
@@ -31,7 +31,7 @@ export class LoginForm extends Component {
                fieldDescription="Your password is expected to be between 8 and 24 characters" 
                required>
         </Input>
-        <SubmitButton loginUser={this.props.loginUser} spinning={this.props.spinning}></SubmitButton>
+        <SubmitButton spinning={this.props.spinning}></SubmitButton>
       </form>
     )
   }

@@ -8,7 +8,7 @@ const SubmitButton = (props) => {
     </svg>
   )
   return (
-    <button className="SubmitButton" type="submit" onClick={props.loginUser}>
+    <button className="SubmitButton" type="submit" onSubmit={props.loginUser}>
       { props.spinning ? loading : 'login' }
     </button>
   )
