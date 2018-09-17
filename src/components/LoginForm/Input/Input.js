@@ -2,24 +2,26 @@ import React from 'react'
 import "./Input.scss";
 
 const Login = (props) => {
+  const {inputName, inputType, inputValue, defaultPlaceholder, onChange, fieldDescription, label, ...rest} = props;
+
   return (
     <div className="Input">
       <label 
-        htmlFor={props.inputName}
+        htmlFor={inputName}
         className="visually-hidden"
       >
-        {props.label}
+        {label}
       </label>
       <input 
-        type={props.inputType} 
-        name={props.inputName}
-        id={props.inputName}
-        aria-required={props.isRequired}
-        placeholder={props.defaultPlaceholder}
-        value={props.inputValue}
-        onChange={props.onChange}
+        type={inputType} 
+        name={inputName}
+        id={inputName}
+        placeholder={defaultPlaceholder}
+        value={inputValue}
+        onChange={onChange}
+        {...rest}
       ></input>
-      <span className="visually-hidden">{props.fieldDescription}</span>
+      <span className="visually-hidden">{fieldDescription}</span>
     </div>
   )
 }
