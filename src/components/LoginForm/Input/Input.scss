@@ -4,7 +4,7 @@
 {
     &:first-child input
     {
-        border-radius: $form-border-radius $form-border-radius 0 0;
+        @include border-radius($form-border-radius $form-border-radius 0 0);
         border-bottom: 2px solid $light-purple-lighter;
     }
     
@@ -26,7 +26,7 @@
         }
         &:focus
         {
-            box-shadow: 0 0 20px rgba($dark-purple, 0.5);
+            @include box-shadow(0, 0, 20px, rgba($dark-purple, 0.5));
             position: relative;
             z-index: 1;
             outline: 0;

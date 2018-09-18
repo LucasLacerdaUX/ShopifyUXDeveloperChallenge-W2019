@@ -7,7 +7,8 @@
     padding: 9px;
     border-radius: 50%;
     margin: 0.65rem;
-    transition: background 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    @include transition(background, 0.3s, cubic-bezier(0.445, 0.05, 0.55, 0.95));
+    
 
     &:hover
     {
@@ -21,7 +22,8 @@
     {
         background: $light-purple-lighter;
         outline: none;
-        box-shadow: 0 0 20px rgba($dark-purple, 0.5);
+        @include box-shadow(0, 0, 20px, rgba($dark-purple, 0.5));
+        
     }
     svg
     {

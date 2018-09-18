@@ -18,10 +18,10 @@
 }
 .LoginForm
 {
-    box-shadow: 0 0 20px rgba($black, 0.25);   
+    @include box-shadow(0, 0, 20px, rgba(black, 0.20));
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    @include border-radius(10px);
     width: 100%;
     margin-bottom: 0;
 }
@@ -39,10 +39,13 @@
     color: $red;
     display: flex;
     flex-direction: column;
-    max-width: 13rem;
+    width: 13rem;
+    max-width: 80%;
     text-align: center;
     font-weight: bold;
     position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
     top: 11rem;
     line-height: 1.1rem;
 
@@ -50,6 +53,7 @@
     @include media-breakpoint-up(desktop, 680px)
     {
         position: relative;
+        @include transform(none);
         top: 0;
         margin-top: 1rem;
     }
