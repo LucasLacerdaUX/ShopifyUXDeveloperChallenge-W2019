@@ -26,13 +26,14 @@
         text-align: center;
         @include media-breakpoint-up(desktop)
         {
-            height: 50vh;
+            height: 75vh;
         }
     }
 
     h2
     {
-        margin-bottom: 0
+        margin-bottom: 0;
+        margin-top: 0;
     }
     h3 
     {
