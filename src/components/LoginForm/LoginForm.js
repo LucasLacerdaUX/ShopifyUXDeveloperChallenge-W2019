@@ -15,7 +15,7 @@ export class LoginForm extends PureComponent {
     }
     return (
       <React.Fragment>
-      <div class="FormWrapper">
+      <div className="FormWrapper">
         <form className="LoginForm" onSubmit={this.props.loginUser}>
           { inputSet.map(inputElement => (
               <Input
