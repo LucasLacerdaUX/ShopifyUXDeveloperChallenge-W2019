@@ -2,12 +2,12 @@
 
 .SubmitButton
 {
-    padding: 1.25rem;
+    padding: 1rem;
     border: none;
     background: $dark-purple;
     color: $white;
     border-radius: 0 0 $form-border-radius $form-border-radius;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: bold;
     transition: background 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     cursor: pointer;

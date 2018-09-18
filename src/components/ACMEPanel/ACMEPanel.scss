@@ -6,8 +6,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 1.5em;
-    padding-bottom: 10rem;
+    padding-top: 1em;
+    padding-bottom: 8.25rem;
     @include media-breakpoint-up(desktop)
     {
         padding-top: 25vh;
@@ -15,11 +15,18 @@
         height: auto;
     }
 
+    @include media-breakpoint-up(desktop, 766px)
+    {
+        padding-top: 10vh;
+    }
+
     h1
     {
         color: $light-purple-lighter;
+        margin-bottom: 0.5rem;
         @include media-breakpoint-up(desktop)
         {
+            margin-bottom: 1.5rem;
             -webkit-margin-before: 0;
         }
     }
@@ -36,7 +43,7 @@
 {
     background-color: $light-purple-lighter;
     width: 60px;
-    padding: 0.75rem;
+    padding: 0.5rem;
 
     @include media-breakpoint-up(desktop)
     {

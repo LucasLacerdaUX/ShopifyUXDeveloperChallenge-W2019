@@ -2,13 +2,21 @@ $breakpoints: (phone: 640px,
                tablet: 768px, 
                desktop: 1024px);
 
-@mixin media-breakpoint-up($bp) {
+@mixin media-breakpoint-up($bp, $height: 0) {
     $min: map-get($breakpoints, $bp);
     @if $min
     {
-        @media (min-width: $min)
+        @if $height == 0
         {
-            @content;
+            @media (min-width: $min)
+            {
+                @content;
+            }
+        } @else {
+            @media (min-width: $min) and (max-height: $height)
+            {
+                @content;
+            }
         }
     } @else {
         @content;
