@@ -11,6 +11,8 @@
     font-weight: bold;
     @include transition(background, 0.3s, cubic-bezier(0.445, 0.05, 0.55, 0.95));
     cursor: pointer;
+    -webkit-appearance:none;
+    margin: 0;
 
     &:hover
     {
