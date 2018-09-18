@@ -46,7 +46,7 @@
     position: absolute;
     top: 10.5rem;
 
-    @include media-breakpoint-up(desktop, 766px)
+    @include media-breakpoint-up(desktop, 680px)
     {
         position: relative;
         top: 0;
