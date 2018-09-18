@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './LoginForm.scss';
 import Input from "./Input/Input";
 import SubmitButton from "./SubmitButton/SubmitButton";
 
-export class LoginForm extends Component {
+export class LoginForm extends PureComponent {
   render() {
     const inputSet = [];
     for (let key in this.props.fields) {
-      console.log(key);
       inputSet.push({
-            id: key,
-            config: this.props.fields[key]
-        });
+          id: key,
+          config: this.props.fields[key]
+      });
     }
     return (
       <React.Fragment>
@@ -30,6 +29,7 @@ export class LoginForm extends Component {
               changeFocus={this.props.inputBlur} 
               aria-required={inputElement.config.validation.required}
               autoFocus={inputElement.config.inputConfig.autofocus}
+              autoComplete={inputElement.config.inputConfig.autoCompleteProp}
             />
           )) 
         }
@@ -38,7 +38,7 @@ export class LoginForm extends Component {
       <div className="Errors" role="alert" aria-atomic="true">
       { 
         inputSet.map(inputElement => (
-          <span>
+          <span key={inputElement.id}>
             { (!inputElement.config.valid && inputElement.config.touched) ? inputElement.config.validation.errorMsg : null }
           </span>
         ))       

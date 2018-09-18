@@ -13,6 +13,7 @@ class LoginPanel extends Component {
         inputConfig:
         {
           autofocus: true,
+          autoCompleteProp: "off",
           type: 'text',
           placeholder: 'username',
           label: "Enter your username",
@@ -33,6 +34,7 @@ class LoginPanel extends Component {
       {
         inputConfig:
         {
+          autoCompleteProp: "off",
           type: 'password',
           placeholder: 'password',
           label: "Enter your password",
@@ -153,14 +155,23 @@ class LoginPanel extends Component {
       setTimeout(() => {
         this.setState( { spinning: false, loggedIn: true } );
       }, 2000);
-    } else {
-      this.validateFields();
     }
   }
 
   handleLogout = (event) => {
     event.preventDefault();
-    this.setState( { spinning: false, loggedIn: false });
+    const updatedFields = {
+      ...this.state.fields
+    };
+
+    // Clean form data
+    for (let input in updatedFields) {
+        updatedFields[input].touched = false;
+        updatedFields[input].valid = false;
+        updatedFields[input].value = '';
+    }
+
+    this.setState( { fields: updatedFields, spinning: false, loggedIn: false });
   }
 
   renderLogin()

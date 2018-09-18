@@ -5,7 +5,7 @@
     padding: 1.25rem;
     border: none;
     background: $dark-purple;
-    color: white;
+    color: $white;
     border-radius: 0 0 10px 10px;
     font-size: 1.25rem;
     font-weight: bold;
@@ -32,7 +32,7 @@
     }
     svg
     {
-        fill: white;
+        fill: $white;
         height: 1.25rem;
         animation: spin1 1s infinite linear;
     }

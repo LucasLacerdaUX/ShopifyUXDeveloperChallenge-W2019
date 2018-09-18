@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ACMEPanel.scss";
 const LogoSVG = (
-    <svg id="SvgLogoAcmeStack" className="ACMELogo" viewBox="0 0 44 44">
+    <svg id="SvgLogoAcmeStack" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="ACMELogo" viewBox="0 0 44 44">
     <defs>
         <linearGradient id="SvgLogoAcmeStackGradient" x1="6.725" x2="37.275" y1="37.279" y2="6.729" gradientUnits="userSpaceOnUse">
         <stop offset="0" stopColor="#7e24fa"/>
