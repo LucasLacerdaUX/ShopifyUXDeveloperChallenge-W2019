@@ -4,7 +4,7 @@ import "./LogoutForm.scss";
 const LogoutForm = (props) => {
   return (
     <div className="LogoutForm">
-      <div class="LogoutForm__Content">
+      <div className="LogoutForm__Content">
         <div>
             <h2>Congratulations</h2>
             <h3>You have successfully logged in.</h3>

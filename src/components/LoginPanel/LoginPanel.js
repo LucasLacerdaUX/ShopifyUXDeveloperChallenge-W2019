@@ -7,81 +7,149 @@ import LogoutForm from '../LogoutForm/LogoutForm';
 
 class LoginPanel extends Component {
   state = {
-    username: 
-    {
-      value: '',
-      valid: false,
-      validation:
+    fields: {
+      username:
       {
-        minCh: 8,
-        maxCh: 24
+        inputConfig:
+        {
+          autofocus: true,
+          type: 'text',
+          placeholder: 'username',
+          label: "Enter your username",
+          fieldDescription: "Your username is expected to be between 6 and 24 characters"
+        },
+        value: '',
+        valid: false,
+        validation:
+        {
+          required: true,
+          minCh: 6,
+          maxCh: 24,
+          errorMsg: "username must be between 6 and 24 characters."
+        },
+        touched: false,
       },
-      touched: false,
-      errorMsg: "username must be between 8 and 24 characters"
-    },
-    password: 
-    {
-      value: '',
-      valid: false,
-      validation:
+      password:
       {
-        minCh: 8,
-        maxCh: 24
-      },
-      touched: false,
-      errorMsg: "password must be between 8 and 24 characters"
+        inputConfig:
+        {
+          type: 'password',
+          placeholder: 'password',
+          label: "Enter your password",
+          fieldDescription: "Your password is expected to be between 8 and 24 characters"
+        },
+        value: '',
+        valid: false,
+        validation:
+        {
+          minCh: 8,
+          maxCh: 24,
+          errorMsg: "password must be between 8 and 24 characters."
+        },
+        touched: false,
+      }
     },
     spinning: false,
-    currentError: '',
     loggedIn: false
   }
 
   // Two-way binding
   handleInputChanged = (event) => {
     const field = event.target.name;
-    const value = event.target.value;
-    const updatedState = { ...this.state[field], value };
-
-    this.setState({
-       [field] : updatedState } );
+    
+    // Get the fields
+    const updatedFields = {
+      ...this.state.fields
+    };
+    // 
+    const updatedInput = { 
+      ...updatedFields[field]
+    };
+  
+    updatedInput.value = event.target.value;
+    
+    // Only checks for onChange if the input is invalid
+    // Otherwise, it could give users an error while they are still typing a valid value
+    // That is bad UX!
+    if (!updatedInput.valid && updatedInput.touched)
+    {
+      updatedInput.valid = this.isFieldValid(updatedInput.value, updatedInput.validation);
     }
+
+    updatedFields[field] = updatedInput;
+
+    this.setState({fields: updatedFields});
+  }
 
   handleBlur = (event) => {
     const field = event.target.name;
-    const isValid = this.state[field].value.length >= 8 && this.state[field].value.length <= 24;
+    // Get the fields
+    const updatedFields = {
+      ...this.state.fields
+    };
+    // Set to touched
+    const updatedInput = { 
+      ...updatedFields[field]
+    };
 
-    const updatedState = { ...this.state[field], touched: true, valid: isValid };
-    this.setState( { [field]: updatedState });
+    // Only set the element to touched if the value isn't empty
+    // That happens only on the first time. If the element has already been touched,
+    // the next time it's made empty, it's going to give an error.
+    if (updatedInput.value.trim() != '' ) 
+      updatedInput.touched = true;
+    updatedInput.valid = this.isFieldValid(updatedInput.value, updatedInput.validation);
+
+    updatedFields[field] = updatedInput;
+
+    this.setState( { fields: updatedFields }, this.validateFields);
   }
 
-
-  // TODO: THIS IS ONLY BEING CALLED ON THE HANDLELOGIN METHOD WHEN IT ISN'T TOUCHED
-  validateFields = () =>
+  isFieldValid(value, rules)
   {
-    const userInvalid = !this.state.username.valid && this.state.username.touched;
-    const passInvalid = !this.state.password.valid && this.state.password.touched;
+    let validField = true;
+    if (!rules) {
+      return true;
+    }
+
+    if (rules.required) {
+        validField = value.trim() !== '' && validField;
+    }
+
+    if (rules.minCh) {
+        validField = value.length >= rules.minCh && validField;
+    }
+
+    if (rules.maxCh) {
+        validField = value.length <= rules.maxCh && validField;
+    }
+
+    return validField;
+  }
+
+  isFormValid = () => {
+    let formValid = true;
     
-    let newError = null;
+    const updatedFields = {
+      ...this.state.fields
+    };
 
-    if (userInvalid && !passInvalid)
-      newError =  this.state.username.errorMsg;
-    else if (!userInvalid && passInvalid)
-      newError =  this.state.password.errorMsg;
-    else if (userInvalid && passInvalid)
-      newError =  "both username and password must be between 8 and 24 characters"
-    else
-      newError =  null;
+    for (let input in updatedFields) {
+        updatedFields[input].touched = true;
+        updatedFields[input].valid = this.isFieldValid(updatedFields[input].value, updatedFields[input].validation);
+        formValid = updatedFields[input].valid && formValid;
+    }
 
-    this.setState({currentError:newError});
+    this.setState({ fields: updatedFields });
+    return formValid;
   }
 
   handleLogin = (event) => {
     event.preventDefault();
-    const formValid = (this.state.username.valid && this.state.password.valid);
+    const formValid = this.isFormValid();
+    
     if (formValid)
     {
       this.setState( { spinning: true });
-      
       setTimeout(() => {
         this.setState( { spinning: false, loggedIn: true } );
       }, 2000);
@@ -100,14 +168,12 @@ class LoginPanel extends Component {
     return (
       <div className="LoginPanel">
         <LoginForm 
+          fields={this.state.fields}
           inputChange={this.handleInputChanged}
           inputBlur={this.handleBlur}
-          username={this.state.username}
-          password={this.state.password}
           loginUser={this.handleLogin}
           spinning={this.state.spinning}
         ></LoginForm>
-        <span role="alert" aria-atomic="true" style={{color: 'red'}}>{this.state.currentError}</span>
         <CustomCheckbox inputName="rememberCheckBox" fieldDescription="Checking this will keep your account logged in the next time you visit this website.">remember me</CustomCheckbox>
         <SocialLinks></SocialLinks>
       </div>
