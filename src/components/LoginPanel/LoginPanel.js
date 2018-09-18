@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import "./LoginPanel.scss";
 import SocialLinks from '../SocialLinks/SocialLinks';
-import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
 import LogoutForm from '../LogoutForm/LogoutForm';
 
 class LoginPanel extends Component {
@@ -185,7 +184,6 @@ class LoginPanel extends Component {
           loginUser={this.handleLogin}
           spinning={this.state.spinning}
         ></LoginForm>
-        <CustomCheckbox inputName="rememberCheckBox" fieldDescription="Checking this will keep your account logged in the next time you visit this website.">remember me</CustomCheckbox>
         <SocialLinks></SocialLinks>
       </div>
     )

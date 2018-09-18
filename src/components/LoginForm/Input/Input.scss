@@ -4,7 +4,7 @@
 {
     &:first-child input
     {
-        border-radius: 10px 10px 0 0;
+        border-radius: $form-border-radius $form-border-radius 0 0;
         border-bottom: 2px solid $light-purple-lighter;
     }
     
@@ -12,13 +12,18 @@
     {
         width: 100%;
         text-align: center;
-        font-size: 1.25em;
+        font-size: 1.1em;
         font-weight: bold;
-        padding: 1.25rem;
+        padding: 1rem;
         background: $white;
-        border: none;
+        border: 2px solid white;
         color: $dark-purple;
     
+        @include media-breakpoint-up(desktop)
+        {
+            font-size: 1.1rem;
+            padding: 1rem;
+        }
         &:focus
         {
             box-shadow: 0 0 20px rgba($dark-purple, 0.5);
@@ -42,7 +47,7 @@
         &.invalid
         {
             color: $red;
-            border: 3px solid $red;
+            border-color: $red;
         }
     }
 
