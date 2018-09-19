@@ -26,6 +26,10 @@
     }
   }
 
+  &__Text:focus {
+    outline: none;
+  }
+
   h2 {
     margin-bottom: 0;
     margin-top: 0;

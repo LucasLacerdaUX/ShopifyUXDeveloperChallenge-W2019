@@ -27,6 +27,9 @@ const LoginForm = props => {
               isInvalid={
                 !inputElement.config.valid && inputElement.config.touched
               }
+              aria-invalid={
+                !inputElement.config.valid && inputElement.config.touched
+              }
               label={inputElement.config.inputConfig.label}
               inputPlaceholder={inputElement.config.inputConfig.placeholder}
               inputDesc={inputElement.config.inputConfig.fieldDescription}
@@ -39,7 +42,7 @@ const LoginForm = props => {
           ))}
           <SubmitButton spinning={spinning} />
         </form>
-        <div className="Errors" role="alert" aria-atomic="true">
+        <div className="Errors" role="alert" aria-live="assertive">
           {inputSet.map(inputElement => {
             const errorTag = (
               <span key={inputElement.id}>

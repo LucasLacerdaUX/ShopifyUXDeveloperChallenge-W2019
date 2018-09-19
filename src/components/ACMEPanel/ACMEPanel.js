@@ -9,6 +9,7 @@ const LogoSVG = (
     className="ACMELogo"
     viewBox="0 0 44 44"
   >
+    <title>AcmeStack Logo</title>
     <defs>
       <linearGradient
         id="SvgLogoAcmeStackGradient"

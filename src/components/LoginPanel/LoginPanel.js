@@ -65,7 +65,7 @@ class LoginPanel extends Component {
 
     updatedInput.value = event.target.value;
 
-    // Only checks for onChange if the input is invalid
+    // Only checks for onChange if the input is invalid and has already been touched
     // Otherwise, it could give users an error while they are still typing a valid value
     // That is bad UX!
     if (!updatedInput.valid && updatedInput.touched) {
