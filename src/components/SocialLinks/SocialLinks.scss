@@ -1,19 +1,17 @@
 @import "../../styles/global.scss";
 
-.SocialPanel
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: $dark-purple;
-    font-weight: 600;
-    font-style: italic;
-    margin-bottom: 2.5rem;
+.SocialPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $dark-purple;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 2.5rem;
 }
-.SocialLinks
-{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
+.SocialLinks {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }

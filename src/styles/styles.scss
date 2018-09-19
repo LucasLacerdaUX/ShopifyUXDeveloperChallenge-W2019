@@ -1,23 +1,21 @@
 @import "global.scss";
 
 html {
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 
-    font-size: 16px;
-    /* iphone 6+, 6s+, 7+, 8+ */
-    @include media-breakpoint-up(phone-big)
-    {
-      font-size: 14px;
-    }
+  font-size: 16px;
+  /* iphone 6+, 6s+, 7+, 8+ */
+  @include media-breakpoint-up(phone-big) {
+    font-size: 14px;
+  }
 
-    @include media-breakpoint-up(desktop)
-    {
-      font-size: 18px;
-    }
+  @include media-breakpoint-up(desktop) {
+    font-size: 18px;
+  }
 }
 
 html,
@@ -38,11 +36,11 @@ body {
 }
 
 body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-#app
-{
+#app {
   display: flex;
   flex: 1;
 }

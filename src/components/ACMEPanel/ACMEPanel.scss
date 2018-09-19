@@ -1,55 +1,47 @@
 @import "../../styles/global.scss";
 
-.ACMEPanel
-{
-    background: $dark-purple;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 1.5em;
-    padding-bottom: 9rem;
-    @include media-breakpoint-up(desktop)
-    {
-        padding-top: 25vh;
-        width: 50%;
-        height: auto;
-    }
+.ACMEPanel {
+  background: $dark-purple;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1.5em;
+  padding-bottom: 9rem;
+  @include media-breakpoint-up(desktop) {
+    padding-top: 25vh;
+    width: 50%;
+    height: auto;
+  }
 
-    @include media-breakpoint-up(desktop-small)
-    {
-        padding-top: 10vh;
-    }
+  @include media-breakpoint-up(desktop-small) {
+    padding-top: 10vh;
+  }
 
-    h1
-    {
-        color: $light-purple-lighter;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        @include media-breakpoint-up(desktop)
-        {
-            margin-bottom: 1.5rem;
-            -webkit-margin-before: 0;
-        }
+  h1 {
+    color: $light-purple-lighter;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    @include media-breakpoint-up(desktop) {
+      margin-bottom: 1.5rem;
+      -webkit-margin-before: 0;
     }
+  }
 }
 
-.ACMELogoBox
-{
-    width: fit-content;
-    background: $purple-gradient;
-    padding: 2px;
-    @include border-radius(10px);
+.ACMELogoBox {
+  width: fit-content;
+  background: $purple-gradient;
+  padding: 2px;
+  @include border-radius(10px);
 }
-.ACMELogo
-{
-    background-color: $light-purple-lighter;
-    width: 4.25rem;
-    padding: 0.6rem;
+.ACMELogo {
+  background-color: $light-purple-lighter;
+  width: 4.25rem;
+  padding: 0.6rem;
 
-    @include media-breakpoint-up(desktop)
-    {
-        width: 4.5rem;
-        padding: 0.75rem;
-    }
-    @include border-radius(10px);
+  @include media-breakpoint-up(desktop) {
+    width: 4.5rem;
+    padding: 0.75rem;
+  }
+  @include border-radius(10px);
 }

@@ -1,22 +1,18 @@
 @import "../../styles/global.scss";
 
-.LoginPanel
-{
-    background: $light-purple-lighter;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    flex: 1 1 340px;
-    position: relative;
+.LoginPanel {
+  background: $light-purple-lighter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  flex: 1 1 340px;
+  position: relative;
 
-    @include media-breakpoint-up(desktop)
-    {
-        padding-top: 25vh;
-    }
-    @include media-breakpoint-up(desktop-small)
-    {
-        padding-top: 10vh;
-    }
-
+  @include media-breakpoint-up(desktop) {
+    padding-top: 25vh;
+  }
+  @include media-breakpoint-up(desktop-small) {
+    padding-top: 10vh;
+  }
 }

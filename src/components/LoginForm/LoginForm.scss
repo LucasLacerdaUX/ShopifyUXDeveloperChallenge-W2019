@@ -1,65 +1,57 @@
 @import "../../styles/global.scss";
 
-.FormWrapper
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.FormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    width: 85%;
+  width: 85%;
+  position: relative;
+  margin-top: -6.75rem;
+
+  @include media-breakpoint-up(desktop) {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+.LoginForm {
+  @include box-shadow(0, 0, 20px, rgba(black, 0.2));
+  display: flex;
+  flex-direction: column;
+  @include border-radius(10px);
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.BelowForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.Errors {
+  color: $red;
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+  max-width: 80%;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+  top: 11rem;
+  line-height: 1.1rem;
+
+  @include media-breakpoint-up(desktop-small) {
     position: relative;
-    margin-top: -6.75rem;
+    @include transform(none);
+    top: 0;
+    margin-top: 1rem;
+  }
 
-    @include media-breakpoint-up(desktop)
-    {
-        width: 50%;
-        margin-top: 0;
-    }
-}
-.LoginForm
-{
-    @include box-shadow(0, 0, 20px, rgba(black, 0.20));
-    display: flex;
-    flex-direction: column;
-    @include border-radius(10px);
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.BelowForm
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.Errors
-{
-    color: $red;
-    display: flex;
-    flex-direction: column;
-    width: 14rem;
-    max-width: 80%;
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-    left: 50%;
-    @include transform(translateX(-50%));
-    top: 11rem;
-    line-height: 1.1rem;
-
-
-    @include media-breakpoint-up(desktop-small)
-    {
-        position: relative;
-        @include transform(none);
-        top: 0;
-        margin-top: 1rem;
-    }
-
-    span
-    {
-        padding-bottom: 0.5rem;
-    }
+  span {
+    padding-bottom: 0.5rem;
+  }
 }

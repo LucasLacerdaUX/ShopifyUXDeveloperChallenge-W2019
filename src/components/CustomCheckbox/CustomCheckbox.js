@@ -1,14 +1,34 @@
-import React from 'react'
-import "./CustomCheckbox.scss"
+import React from "react";
+import PropTypes from "prop-types";
+import "./CustomCheckbox.scss";
 
-const CustomCheckbox = (props) => {
+const CustomCheckbox = props => {
+  const { inputName, children, fieldDescription } = props;
   return (
     <div className="CustomCheckbox">
-        <input type="checkbox" id={props.inputName} name={props.inputName} aria-describedby={`${props.inputName}-hint`}/>
-        <label htmlFor={props.inputName}>{props.children}</label>
-        <span className="visually-hidden" id={`${props.inputName}-hint`}>{props.fieldDescription}</span>
+      <input
+        type="checkbox"
+        id={inputName}
+        name={inputName}
+        aria-describedby={`${inputName}-hint`}
+      />
+      <label htmlFor={inputName}>{children}</label>
+      <span className="visually-hidden" id={`${inputName}-hint`}>
+        {fieldDescription}
+      </span>
     </div>
-  )
-}
+  );
+};
 
-export default CustomCheckbox
+CustomCheckbox.propTypes = {
+  inputName: PropTypes.string.isRequired,
+  fieldDescription: PropTypes.string,
+  children: PropTypes.string
+};
+
+CustomCheckbox.defaultProps = {
+  fieldDescription: "",
+  children: null
+};
+
+export default CustomCheckbox;

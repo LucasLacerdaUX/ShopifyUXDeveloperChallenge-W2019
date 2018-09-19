@@ -1,34 +1,64 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 import "./Input.scss";
 
-const Login = (props) => {
-  const {inputName, inputType, inputValue, defaultPlaceholder, changeText, changeFocus, fieldDescription, isInvalid, label, ...rest} = props;
-  let cssClasses = '';
-  if (isInvalid) cssClasses = 'invalid';
+const Input = props => {
+  const {
+    inputName,
+    inputType,
+    inputPlaceholder,
+    inputDesc,
+    inputValue,
+    changeText,
+    changeFocus,
+    isInvalid,
+    label,
+    ...otherProps
+  } = props;
 
   return (
     <div className="Input">
-      <label 
-        htmlFor={inputName}
-        className="visually-hidden"
-      >
+      <label htmlFor={inputName} className="visually-hidden">
         {label}
       </label>
-      <input 
-        className={cssClasses}
-        type={inputType} 
+      <input
+        className={isInvalid ? "invalid" : null}
+        type={inputType}
         name={inputName}
         id={inputName}
-        placeholder={defaultPlaceholder}
+        placeholder={inputPlaceholder}
         value={inputValue}
         onChange={changeText}
         onBlur={changeFocus}
         aria-describedby={`${inputName}-hint`}
-        {...rest}
-      ></input>
-      <span className="visually-hidden" id={`${inputName}-hint`}>{fieldDescription}</span>
+        {...otherProps}
+      />
+      <span className="visually-hidden" id={`${inputName}-hint`}>
+        {inputDesc}
+      </span>
     </div>
-  )
-}
+  );
+};
 
-export default Login;
+Input.propTypes = {
+  inputName: PropTypes.string.isRequired,
+  inputType: PropTypes.string.isRequired,
+  inputValue: PropTypes.string,
+  inputPlaceholder: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  inputDesc: PropTypes.string,
+  changeText: PropTypes.func,
+  changeFocus: PropTypes.func,
+  isInvalid: PropTypes.bool
+};
+
+Input.defaultProps = {
+  inputValue: "",
+  inputPlaceholder: "",
+  inputDesc: "",
+  isInvalid: false,
+  changeText: null,
+  changeFocus: null
+};
+
+export default Input;

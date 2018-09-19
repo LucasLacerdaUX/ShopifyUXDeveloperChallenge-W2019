@@ -1,16 +1,18 @@
-$breakpoints: (phone-small: 'only screen and (min-width: 640px)',
-               phone-big: 'only screen and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3)',
-               desktop-small: 'only screen and (min-width: 1024px) and (max-height: 680px)',
-               desktop: 'only screen and (min-width: 1024px)');
+$breakpoints: (
+  phone-small: "only screen and (min-width: 640px)",
+  phone-big:
+    "only screen and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3)",
+  desktop-small: "only screen and (min-width: 1024px) and (max-height: 680px)",
+  desktop: "only screen and (min-width: 1024px)"
+);
 
 @mixin media-breakpoint-up($bp) {
-    $min: map-get($breakpoints, $bp);
-    @if $min
-    {
-        @media #{$min} {
-            @content;
-        }
-    } @else {
-        @content;
+  $min: map-get($breakpoints, $bp);
+  @if $min {
+    @media #{$min} {
+      @content;
     }
+  } @else {
+    @content;
+  }
 }
