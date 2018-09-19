@@ -1,22 +1,14 @@
-$breakpoints: (phone: 640px, 
-               tablet: 768px, 
-               desktop: 1024px);
+$breakpoints: (phone-small: 'only screen and (min-width: 640px)',
+               phone-big: 'only screen and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3)',
+               desktop-small: 'only screen and (min-width: 1024px) and (max-height: 680px)',
+               desktop: 'only screen and (min-width: 1024px)');
 
-@mixin media-breakpoint-up($bp, $height: 0) {
+@mixin media-breakpoint-up($bp) {
     $min: map-get($breakpoints, $bp);
     @if $min
     {
-        @if $height == 0
-        {
-            @media (min-width: $min)
-            {
-                @content;
-            }
-        } @else {
-            @media (min-width: $min) and (max-height: $height)
-            {
-                @content;
-            }
+        @media #{$min} {
+            @content;
         }
     } @else {
         @content;

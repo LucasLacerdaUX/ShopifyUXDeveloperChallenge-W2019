@@ -7,14 +7,14 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    flex: 1 1 300px;
+    flex: 1 1 340px;
     position: relative;
 
     @include media-breakpoint-up(desktop)
     {
         padding-top: 25vh;
     }
-    @include media-breakpoint-up(desktop, 680px)
+    @include media-breakpoint-up(desktop-small)
     {
         padding-top: 10vh;
     }

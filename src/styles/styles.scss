@@ -7,7 +7,13 @@ html {
     text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
 
-    font-size: 14px;
+    font-size: 16px;
+    /* iphone 6+, 6s+, 7+, 8+ */
+    @include media-breakpoint-up(phone-big)
+    {
+      font-size: 14px;
+    }
+
     @include media-breakpoint-up(desktop)
     {
       font-size: 18px;

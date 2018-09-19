@@ -2,6 +2,11 @@
 
 .CustomCheckbox
 {
+    @include media-breakpoint-up(phone-big)
+    {
+        margin-top: 0rem;
+    }
+
     margin-top: 4rem;
     @include media-breakpoint-up(desktop)
     {
@@ -32,8 +37,8 @@
     label::after
     {
         @include border-radius(3px);
-        top: 6px;
-        left: 4px;
+        top: 5px;
+        left: 3px;
         height: 12px;
         width: 12px;
         
@@ -50,10 +55,10 @@
     {
         top: 2px;
         left: 0;
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
         @include border-radius(4px);
-        border: 2px solid $dark-purple;
+        border: 1px solid $dark-purple;
         @include media-breakpoint-up(desktop)
         {
             height: 22px;
