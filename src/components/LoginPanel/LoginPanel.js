@@ -47,7 +47,8 @@ class LoginPanel extends Component {
       }
     },
     loading: false,
-    loggedIn: false
+    loggedIn: false,
+    formErrorCount: 0
   };
 
   handleInputChanged = event => {
@@ -152,7 +153,12 @@ class LoginPanel extends Component {
   handleLogin = event => {
     event.preventDefault();
     const formValid = this.isFormValid();
-    if (!formValid) return;
+    if (!formValid) {
+      this.setState(prevState => ({
+        formErrorCount: prevState.formErrorCount + 1
+      }));
+      return;
+    }
 
     this.setState({ loading: true });
     setTimeout(() => {
@@ -174,11 +180,16 @@ class LoginPanel extends Component {
       updatedFields[input].value = "";
     });
 
-    this.setState({ fields: updatedFields, loading: false, loggedIn: false });
+    this.setState({
+      fields: updatedFields,
+      loading: false,
+      loggedIn: false,
+      formErrorCount: 0
+    });
   };
 
   renderLogin() {
-    const { fields, loading } = this.state;
+    const { fields, loading, formErrorCount } = this.state;
     return (
       <div className="LoginPanel">
         <LoginForm
@@ -187,6 +198,7 @@ class LoginPanel extends Component {
           inputBlur={this.handleInputBlur}
           formSubmit={this.handleLogin}
           loading={loading}
+          errorRenderKey={formErrorCount}
         />
         <SocialLinks />
       </div>

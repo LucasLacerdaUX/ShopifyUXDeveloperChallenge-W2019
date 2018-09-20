@@ -6,7 +6,14 @@ import SubmitButton from "./SubmitButton/SubmitButton";
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 
 const LoginForm = props => {
-  const { fields, formSubmit, inputChange, inputBlur, loading } = props;
+  const {
+    fields,
+    formSubmit,
+    inputChange,
+    inputBlur,
+    loading,
+    errorRenderKey
+  } = props;
 
   return (
     <React.Fragment>
@@ -36,12 +43,19 @@ const LoginForm = props => {
           })}
           <SubmitButton loading={loading} />
         </form>
-        <div className="Errors" role="alert" aria-live="assertive">
+        <div
+          className="Errors"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
           {Object.keys(fields).map(key => {
             const inputElement = fields[key];
             const invalid = !inputElement.valid && inputElement.touched;
             return invalid ? (
-              <span key={key}>{inputElement.validation.errorMsg}</span>
+              <span key={`${errorRenderKey}-${key}`}>
+                {inputElement.validation.errorMsg}
+              </span>
             ) : null;
           })}
         </div>
@@ -62,13 +76,15 @@ LoginForm.propTypes = {
   formSubmit: PropTypes.func.isRequired,
   inputChange: PropTypes.func,
   inputBlur: PropTypes.func,
-  loading: PropTypes.bool
+  loading: PropTypes.bool,
+  errorRenderKey: PropTypes.number
 };
 
 LoginForm.defaultProps = {
   inputChange: null,
   inputBlur: null,
-  loading: false
+  loading: false,
+  errorRenderKey: 0
 };
 
 export default LoginForm;

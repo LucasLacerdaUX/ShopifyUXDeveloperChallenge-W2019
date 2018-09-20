@@ -45,7 +45,7 @@ Input.propTypes = {
   inputType: PropTypes.string.isRequired,
   inputValue: PropTypes.string,
   inputPlaceholder: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
   inputDesc: PropTypes.string,
   changeText: PropTypes.func,
   changeFocus: PropTypes.func,
