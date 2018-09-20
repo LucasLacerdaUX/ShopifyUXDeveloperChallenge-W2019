@@ -12,14 +12,14 @@ const Input = props => {
     changeText,
     changeFocus,
     isInvalid,
-    label,
+    labelText,
     ...otherProps
   } = props;
 
   return (
     <div className="Input">
       <label htmlFor={inputName} className="visually-hidden">
-        {label}
+        {labelText}
       </label>
       <input
         className={isInvalid ? "invalid" : null}

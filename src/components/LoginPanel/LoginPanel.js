@@ -8,13 +8,13 @@ class LoginPanel extends Component {
   state = {
     fields: {
       username: {
-        inputConfig: {
+        config: {
           autofocus: true,
           autoCompleteProp: "off",
           type: "text",
           placeholder: "username",
           label: "Enter your username",
-          fieldDescription:
+          description:
             "Your username is expected to be between 6 and 24 characters"
         },
         value: "",
@@ -28,12 +28,12 @@ class LoginPanel extends Component {
         touched: false
       },
       password: {
-        inputConfig: {
+        config: {
           autoCompleteProp: "off",
           type: "password",
           placeholder: "password",
           label: "Enter your password",
-          fieldDescription:
+          description:
             "Your password is expected to be between 8 and 24 characters"
         },
         value: "",
@@ -46,16 +46,14 @@ class LoginPanel extends Component {
         touched: false
       }
     },
-    spinning: false,
+    loading: false,
     loggedIn: false
   };
 
-  // Two-way binding
   handleInputChanged = event => {
     const inputName = event.target.name;
     const { fields } = this.state;
 
-    // Get the fields
     const updatedFields = {
       ...fields
     };
@@ -69,7 +67,7 @@ class LoginPanel extends Component {
     // Otherwise, it could give users an error while they are still typing a valid value
     // That is bad UX!
     if (!updatedInput.valid && updatedInput.touched) {
-      updatedInput.valid = this.isFieldValid(
+      updatedInput.valid = this.isInputValid(
         updatedInput.value,
         updatedInput.validation
       );
@@ -80,7 +78,7 @@ class LoginPanel extends Component {
     this.setState({ fields: updatedFields });
   };
 
-  handleBlur = event => {
+  handleInputBlur = event => {
     const { fields } = this.state;
     const inputName = event.target.name;
 
@@ -98,17 +96,17 @@ class LoginPanel extends Component {
     if (updatedInput.value.trim() !== "") {
       updatedInput.touched = true;
     }
-    updatedInput.valid = this.isFieldValid(
+    updatedInput.valid = this.isInputValid(
       updatedInput.value,
       updatedInput.validation
     );
 
     updatedFields[inputName] = updatedInput;
 
-    this.setState({ fields: updatedFields }, this.validateFields);
+    this.setState({ fields: updatedFields });
   };
 
-  isFieldValid = (value, rules) => {
+  isInputValid = (value, rules) => {
     let validField = true;
     if (!rules) {
       return true;
@@ -137,9 +135,10 @@ class LoginPanel extends Component {
       ...fields
     };
 
+    // Validate all fields, even if it hasn't been touched yet
     Object.keys(updatedFields).forEach(input => {
       updatedFields[input].touched = true;
-      updatedFields[input].valid = this.isFieldValid(
+      updatedFields[input].valid = this.isInputValid(
         updatedFields[input].value,
         updatedFields[input].validation
       );
@@ -155,9 +154,9 @@ class LoginPanel extends Component {
     const formValid = this.isFormValid();
     if (!formValid) return;
 
-    this.setState({ spinning: true });
+    this.setState({ loading: true });
     setTimeout(() => {
-      this.setState({ spinning: false, loggedIn: true });
+      this.setState({ loading: false, loggedIn: true });
     }, 2000);
   };
 
@@ -175,19 +174,19 @@ class LoginPanel extends Component {
       updatedFields[input].value = "";
     });
 
-    this.setState({ fields: updatedFields, spinning: false, loggedIn: false });
+    this.setState({ fields: updatedFields, loading: false, loggedIn: false });
   };
 
   renderLogin() {
-    const { fields, spinning } = this.state;
+    const { fields, loading } = this.state;
     return (
       <div className="LoginPanel">
         <LoginForm
           fields={fields}
           inputChange={this.handleInputChanged}
-          inputBlur={this.handleBlur}
+          inputBlur={this.handleInputBlur}
           formSubmit={this.handleLogin}
-          spinning={spinning}
+          loading={loading}
         />
         <SocialLinks />
       </div>

@@ -6,52 +6,43 @@ import SubmitButton from "./SubmitButton/SubmitButton";
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 
 const LoginForm = props => {
-  const { fields, formSubmit, inputChange, inputBlur, spinning } = props;
-  let inputSet = [];
-
-  inputSet = Object.keys(fields).map(key => ({
-    id: key,
-    config: fields[key]
-  }));
+  const { fields, formSubmit, inputChange, inputBlur, loading } = props;
 
   return (
     <React.Fragment>
       <div className="FormWrapper">
         <form className="LoginForm" onSubmit={formSubmit}>
-          {inputSet.map(inputElement => (
-            <Input
-              key={inputElement.id}
-              inputName={inputElement.id}
-              inputType={inputElement.config.inputConfig.type}
-              value={inputElement.config.value}
-              isInvalid={
-                !inputElement.config.valid && inputElement.config.touched
-              }
-              aria-invalid={
-                !inputElement.config.valid && inputElement.config.touched
-              }
-              label={inputElement.config.inputConfig.label}
-              inputPlaceholder={inputElement.config.inputConfig.placeholder}
-              inputDesc={inputElement.config.inputConfig.fieldDescription}
-              changeText={inputChange}
-              changeFocus={inputBlur}
-              aria-required={inputElement.config.validation.required}
-              autoFocus={inputElement.config.inputConfig.autofocus}
-              autoComplete={inputElement.config.inputConfig.autoCompleteProp}
-            />
-          ))}
-          <SubmitButton spinning={spinning} />
+          {Object.keys(fields).map(key => {
+            const inputElement = fields[key];
+            const invalid = !inputElement.valid && inputElement.touched;
+            return (
+              <Input
+                key={key}
+                inputName={key}
+                inputType={inputElement.config.type}
+                value={inputElement.value}
+                isInvalid={invalid}
+                aria-invalid={invalid}
+                labelText={inputElement.config.label}
+                inputPlaceholder={inputElement.config.placeholder}
+                inputDesc={inputElement.config.description}
+                changeText={inputChange}
+                changeFocus={inputBlur}
+                aria-required={inputElement.validation.required}
+                autoFocus={inputElement.config.autofocus}
+                autoComplete={inputElement.config.autoCompleteProp}
+              />
+            );
+          })}
+          <SubmitButton loading={loading} />
         </form>
         <div className="Errors" role="alert" aria-live="assertive">
-          {inputSet.map(inputElement => {
-            const errorTag = (
-              <span key={inputElement.id}>
-                {inputElement.config.validation.errorMsg}
-              </span>
-            );
-            return !inputElement.config.valid && inputElement.config.touched
-              ? errorTag
-              : null;
+          {Object.keys(fields).map(key => {
+            const inputElement = fields[key];
+            const invalid = !inputElement.valid && inputElement.touched;
+            return invalid ? (
+              <span key={key}>{inputElement.validation.errorMsg}</span>
+            ) : null;
           })}
         </div>
       </div>
@@ -71,13 +62,13 @@ LoginForm.propTypes = {
   formSubmit: PropTypes.func.isRequired,
   inputChange: PropTypes.func,
   inputBlur: PropTypes.func,
-  spinning: PropTypes.bool
+  loading: PropTypes.bool
 };
 
 LoginForm.defaultProps = {
   inputChange: null,
   inputBlur: null,
-  spinning: false
+  loading: false
 };
 
 export default LoginForm;
