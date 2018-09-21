@@ -15,4 +15,18 @@
   @include media-breakpoint-up(desktop-small) {
     padding-top: 10vh;
   }
+
+  .Errors {
+    position: absolute;
+    left: 50%;
+    @include transform(translate(-50%, 100%));
+    bottom: -0.5rem;
+
+    @include media-breakpoint-up(desktop-small) {
+      position: relative;
+      @include transform(none);
+      top: 0;
+      margin-top: 1rem;
+    }
+  }
 }

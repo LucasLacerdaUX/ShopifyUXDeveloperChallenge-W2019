@@ -4,6 +4,7 @@ import "./Form.scss";
 import Input from "./Input/Input";
 import Button from "../Button/Button";
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
+import LiveError from "../LiveError/LiveError";
 
 const LoginForm = props => {
   const {
@@ -57,14 +58,7 @@ const LoginForm = props => {
             login
           </Button>
         </form>
-        <div
-          className="Errors"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          {errorSet}
-        </div>
+        <LiveError>{errorSet}</LiveError>
       </div>
 
       <CustomCheckbox
