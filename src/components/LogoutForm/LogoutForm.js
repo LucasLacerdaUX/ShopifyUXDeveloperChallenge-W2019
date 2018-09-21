@@ -4,17 +4,14 @@ import "./LogoutForm.scss";
 
 class LogoutForm extends PureComponent {
   static propTypes = {
-    mainTitle: PropTypes.string,
+    mainTitle: PropTypes.string.isRequired,
     mainDesc: PropTypes.string,
-    btnText: PropTypes.string,
-    btnAction: PropTypes.func
+    btnText: PropTypes.node.isRequired,
+    btnAction: PropTypes.func.isRequired
   };
 
   static defaultProps = {
-    mainTitle: "Congratulations",
-    mainDesc: "You have successfully logged in.",
-    btnText: "sign out",
-    btnAction: null
+    mainDesc: null
   };
 
   // Acessibility: autoFocus on the logout message

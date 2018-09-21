@@ -160,10 +160,11 @@ class LoginPanel extends Component {
       return;
     }
 
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false, loggedIn: true });
-    }, 2000);
+    this.setState({ loading: true }, () => {
+      setTimeout(() => {
+        this.setState({ loading: false, loggedIn: true });
+      }, 2000);
+    });
   };
 
   handleLogout = event => {
@@ -188,9 +189,9 @@ class LoginPanel extends Component {
     });
   };
 
-  renderLogin() {
-    const { fields, loading, formErrorCount } = this.state;
-    return (
+  render() {
+    const { fields, loading, formErrorCount, loggedIn } = this.state;
+    const renderLogin = (
       <div className="LoginPanel">
         <LoginForm
           fields={fields}
@@ -203,22 +204,16 @@ class LoginPanel extends Component {
         <SocialLinks />
       </div>
     );
-  }
-
-  renderLogout() {
-    return (
-      <React.Fragment>
-        <LogoutForm btnAction={this.handleLogout} />
-      </React.Fragment>
+    const renderLogout = (
+      <LogoutForm
+        btnAction={this.handleLogout}
+        mainTitle="Congratulations"
+        mainDesc="You have successfully logged in."
+        btnText="sign out"
+      />
     );
-  }
-
-  render() {
-    const { loggedIn } = this.state;
     return (
-      <React.Fragment>
-        {loggedIn ? this.renderLogout() : this.renderLogin()}
-      </React.Fragment>
+      <React.Fragment>{loggedIn ? renderLogout : renderLogin}</React.Fragment>
     );
   }
 }

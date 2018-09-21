@@ -45,8 +45,7 @@ const SocialLinks = () => {
     }
   };
 
-  let SocialMedia = null;
-  SocialMedia = Object.keys(SocialMediaLinks).map(website => {
+  const SocialMedia = Object.keys(SocialMediaLinks).map(website => {
     const siteInfo = SocialMediaLinks[website];
     return (
       <SocialLink key={website} socialId={website} socialDesc={siteInfo.desc}>

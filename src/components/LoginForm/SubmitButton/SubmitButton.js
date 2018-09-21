@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./SubmitButton.scss";
 
-const SubmitButton = props => {
-  const { loading } = props;
+const SubmitButton = ({ loading, children }) => {
   const loadingIcon = (
     <React.Fragment>
       <svg id="SvgIconLoading" viewBox="0 0 16 16">
@@ -16,13 +15,18 @@ const SubmitButton = props => {
   );
   return (
     <button className="SubmitButton" type="submit">
-      {loading ? loadingIcon : "login"}
+      {loading ? loadingIcon : children}
     </button>
   );
 };
 
 SubmitButton.propTypes = {
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  children: PropTypes.node
+};
+
+SubmitButton.defaultProps = {
+  children: ""
 };
 
 export default SubmitButton;

@@ -41,7 +41,7 @@ const LoginForm = props => {
               />
             );
           })}
-          <SubmitButton loading={loading} />
+          <SubmitButton loading={loading}>login</SubmitButton>
         </form>
         <div
           className="Errors"
@@ -52,11 +52,13 @@ const LoginForm = props => {
           {Object.keys(fields).map(key => {
             const inputElement = fields[key];
             const invalid = !inputElement.valid && inputElement.touched;
-            return invalid ? (
-              <span key={`${errorRenderKey}-${key}`}>
-                {inputElement.validation.errorMsg}
-              </span>
-            ) : null;
+            return (
+              invalid && (
+                <span key={`${errorRenderKey}-${key}`}>
+                  {inputElement.validation.errorMsg}
+                </span>
+              )
+            );
           })}
         </div>
       </div>
