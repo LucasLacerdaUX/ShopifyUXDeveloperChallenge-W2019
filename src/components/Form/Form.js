@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./LoginForm.scss";
+import "./Form.scss";
 import Input from "./Input/Input";
-import SubmitButton from "./SubmitButton/SubmitButton";
+import Button from "../Button/Button";
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 
 const LoginForm = props => {
@@ -41,7 +41,9 @@ const LoginForm = props => {
               />
             );
           })}
-          <SubmitButton loading={loading}>login</SubmitButton>
+          <Button btnStyle="FormButton" loading={loading} btnType="submit">
+            login
+          </Button>
         </form>
         <div
           className="Errors"

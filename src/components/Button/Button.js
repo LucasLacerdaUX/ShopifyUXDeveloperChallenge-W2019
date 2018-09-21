@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./SubmitButton.scss";
+import "./Button.scss";
 
-const SubmitButton = ({ loading, children }) => {
+const Button = ({ loading, btnType, btnStyle, btnAction, children }) => {
   const loadingIcon = (
     <React.Fragment>
       <svg id="SvgIconLoading" viewBox="0 0 16 16">
@@ -14,19 +14,25 @@ const SubmitButton = ({ loading, children }) => {
     </React.Fragment>
   );
   return (
-    <button className="SubmitButton" type="submit">
+    <button className={`Button ${btnStyle}`} type={btnType} onClick={btnAction}>
       {loading ? loadingIcon : children}
     </button>
   );
 };
 
-SubmitButton.propTypes = {
+Button.propTypes = {
   loading: PropTypes.bool.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  btnType: PropTypes.oneOf(["button", "submit", "reset"]),
+  btnStyle: PropTypes.oneOf(["DefaultButton", "FormButton"]),
+  btnAction: PropTypes.func
 };
 
-SubmitButton.defaultProps = {
-  children: ""
+Button.defaultProps = {
+  children: "",
+  btnStyle: "DefaultButton",
+  btnType: "button",
+  btnAction: null
 };
 
-export default SubmitButton;
+export default Button;

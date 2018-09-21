@@ -1,9 +1,11 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import Button from "../Button/Button";
 import "./LogoutForm.scss";
 
-class LogoutForm extends PureComponent {
+class LogoutPanel extends PureComponent {
   static propTypes = {
+    loading: PropTypes.bool,
     mainTitle: PropTypes.string.isRequired,
     mainDesc: PropTypes.string,
     btnText: PropTypes.node.isRequired,
@@ -11,6 +13,7 @@ class LogoutForm extends PureComponent {
   };
 
   static defaultProps = {
+    loading: false,
     mainDesc: null
   };
 
@@ -20,12 +23,12 @@ class LogoutForm extends PureComponent {
   }
 
   render() {
-    const { mainTitle, mainDesc, btnText, btnAction } = this.props;
+    const { loading, mainTitle, mainDesc, btnText, btnAction } = this.props;
     return (
-      <div className="LogoutForm">
-        <div className="LogoutForm__Content">
+      <div className="LogoutPanel">
+        <div className="LogoutPanel__Content">
           <div
-            className="LogoutForm__Text"
+            className="LogoutPanel__Text"
             ref={logoutMessage => {
               this.logoutMessage = logoutMessage;
             }}
@@ -34,13 +37,13 @@ class LogoutForm extends PureComponent {
             <h2>{mainTitle}</h2>
             <h3>{mainDesc}</h3>
           </div>
-          <button type="button" onClick={btnAction}>
+          <Button btnType="submit" loading={loading} btnAction={btnAction}>
             {btnText}
-          </button>
+          </Button>
         </div>
       </div>
     );
   }
 }
 
-export default LogoutForm;
+export default LogoutPanel;

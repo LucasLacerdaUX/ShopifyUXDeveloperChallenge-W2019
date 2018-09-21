@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import LoginForm from "../LoginForm/LoginForm";
+import LoginForm from "../../components/Form/Form";
+import SocialLinks from "../../components/SocialLinks/SocialLinks";
+import LogoutForm from "../../components/LogoutForm/LogoutPanel";
 import "./LoginPanel.scss";
-import SocialLinks from "../SocialLinks/SocialLinks";
-import LogoutForm from "../LogoutForm/LogoutForm";
 
 class LoginPanel extends Component {
   state = {
@@ -163,7 +163,7 @@ class LoginPanel extends Component {
     this.setState({ loading: true }, () => {
       setTimeout(() => {
         this.setState({ loading: false, loggedIn: true });
-      }, 2000);
+      }, 1500);
     });
   };
 
@@ -181,11 +181,15 @@ class LoginPanel extends Component {
       updatedFields[input].value = "";
     });
 
-    this.setState({
-      fields: updatedFields,
-      loading: false,
-      loggedIn: false,
-      formErrorCount: 0
+    this.setState({ loading: true }, () => {
+      setTimeout(() => {
+        this.setState({
+          fields: updatedFields,
+          loading: false,
+          loggedIn: false,
+          formErrorCount: 0
+        });
+      }, 1500);
     });
   };
 
@@ -210,6 +214,7 @@ class LoginPanel extends Component {
         mainTitle="Congratulations"
         mainDesc="You have successfully logged in."
         btnText="sign out"
+        loading={loading}
       />
     );
     return (
