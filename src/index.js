@@ -5,7 +5,7 @@ import "./styles/styles.scss";
 import "./index.scss";
 
 import ACMEPanel from "./components/ACMEPanel/ACMEPanel";
-import LoginPanel from "./components/LoginPanel/LoginPanel";
+import LoginPanel from "./containers/LoginPanel/LoginPanel";
 
 const App = () => (
   <main className="Wrapper">

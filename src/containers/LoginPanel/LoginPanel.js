@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LoginForm from "../../components/Form/Form";
 import SocialLinks from "../../components/SocialLinks/SocialLinks";
-import LogoutForm from "../../components/LogoutForm/LogoutPanel";
+import LogoutPanel from "../../components/LogoutPanel/LogoutPanel";
 import "./LoginPanel.scss";
 
 class LoginPanel extends Component {
@@ -209,7 +209,7 @@ class LoginPanel extends Component {
       </div>
     );
     const renderLogout = (
-      <LogoutForm
+      <LogoutPanel
         btnAction={this.handleLogout}
         mainTitle="Congratulations"
         mainDesc="You have successfully logged in."

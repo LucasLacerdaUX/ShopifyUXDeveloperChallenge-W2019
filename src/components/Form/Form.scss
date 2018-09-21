@@ -39,8 +39,8 @@
   font-weight: bold;
   position: absolute;
   left: 50%;
-  @include transform(translateX(-50%));
-  top: 11rem;
+  @include transform(translate(-50%, 100%));
+  bottom: -0.5rem;
   line-height: 1.1rem;
 
   @include media-breakpoint-up(desktop-small) {

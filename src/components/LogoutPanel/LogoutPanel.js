@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
-import "./LogoutForm.scss";
+import "./LogoutPanel.scss";
 
 class LogoutPanel extends PureComponent {
   static propTypes = {

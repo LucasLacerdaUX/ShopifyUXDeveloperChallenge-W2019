@@ -38,7 +38,7 @@ const Input = ({
 
 Input.propTypes = {
   inputName: PropTypes.string.isRequired,
-  inputType: PropTypes.string.isRequired,
+  inputType: PropTypes.oneOf(["text", "password", "email"]),
   inputValue: PropTypes.string,
   inputPlaceholder: PropTypes.string,
   labelText: PropTypes.string.isRequired,
@@ -49,6 +49,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  inputType: "text",
   inputValue: "",
   inputPlaceholder: "",
   inputDesc: "",

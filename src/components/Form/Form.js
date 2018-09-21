@@ -15,32 +15,44 @@ const LoginForm = props => {
     errorRenderKey
   } = props;
 
+  const inputSet = [];
+  const errorSet = [];
+  Object.keys(fields).forEach(key => {
+    const inputElement = fields[key];
+    const invalid = !inputElement.valid && inputElement.touched;
+
+    inputSet.push(
+      <Input
+        key={key}
+        inputName={key}
+        inputType={inputElement.config.type}
+        value={inputElement.value}
+        isInvalid={invalid}
+        aria-invalid={invalid}
+        labelText={inputElement.config.label}
+        inputPlaceholder={inputElement.config.placeholder}
+        inputDesc={inputElement.config.description}
+        changeText={inputChange}
+        changeFocus={inputBlur}
+        aria-required={inputElement.validation.required}
+        autoFocus={inputElement.config.autofocus}
+        autoComplete={inputElement.config.autoCompleteProp}
+      />
+    );
+
+    if (invalid)
+      errorSet.push(
+        <span key={`${errorRenderKey}-${key}`}>
+          {inputElement.validation.errorMsg}
+        </span>
+      );
+  });
+
   return (
     <React.Fragment>
       <div className="FormWrapper">
         <form className="LoginForm" onSubmit={formSubmit}>
-          {Object.keys(fields).map(key => {
-            const inputElement = fields[key];
-            const invalid = !inputElement.valid && inputElement.touched;
-            return (
-              <Input
-                key={key}
-                inputName={key}
-                inputType={inputElement.config.type}
-                value={inputElement.value}
-                isInvalid={invalid}
-                aria-invalid={invalid}
-                labelText={inputElement.config.label}
-                inputPlaceholder={inputElement.config.placeholder}
-                inputDesc={inputElement.config.description}
-                changeText={inputChange}
-                changeFocus={inputBlur}
-                aria-required={inputElement.validation.required}
-                autoFocus={inputElement.config.autofocus}
-                autoComplete={inputElement.config.autoCompleteProp}
-              />
-            );
-          })}
+          {inputSet}
           <Button btnStyle="FormButton" loading={loading} btnType="submit">
             login
           </Button>
@@ -51,17 +63,7 @@ const LoginForm = props => {
           aria-live="assertive"
           aria-atomic="true"
         >
-          {Object.keys(fields).map(key => {
-            const inputElement = fields[key];
-            const invalid = !inputElement.valid && inputElement.touched;
-            return (
-              invalid && (
-                <span key={`${errorRenderKey}-${key}`}>
-                  {inputElement.validation.errorMsg}
-                </span>
-              )
-            );
-          })}
+          {errorSet}
         </div>
       </div>
 
