@@ -11,9 +11,11 @@ const CustomCheckbox = ({ inputName, children, fieldDescription }) => (
       aria-describedby={`${inputName}-hint`}
     />
     <label htmlFor={inputName}>{children}</label>
-    <span className="visually-hidden" id={`${inputName}-hint`}>
-      {fieldDescription}
-    </span>
+    {fieldDescription && (
+      <span className="visually-hidden" id={`${inputName}-hint`}>
+        {fieldDescription}
+      </span>
+    )}
   </div>
 );
 
@@ -24,7 +26,7 @@ CustomCheckbox.propTypes = {
 };
 
 CustomCheckbox.defaultProps = {
-  fieldDescription: "",
+  fieldDescription: null,
   children: null
 };
 

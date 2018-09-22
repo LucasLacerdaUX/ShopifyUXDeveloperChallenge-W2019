@@ -19,7 +19,7 @@ const Input = ({
       {labelText}
     </label>
     <input
-      className={isInvalid ? "invalid" : null}
+      className={isInvalid && "invalid"}
       type={inputType}
       name={inputName}
       id={inputName}
@@ -38,14 +38,27 @@ const Input = ({
 
 Input.propTypes = {
   inputName: PropTypes.string.isRequired,
-  inputType: PropTypes.oneOf(["text", "password", "email"]),
-  inputValue: PropTypes.string,
+  inputType: PropTypes.oneOf([
+    "text",
+    "password",
+    "email",
+    "search",
+    "tel",
+    "url",
+    "date",
+    "month",
+    "week",
+    "time",
+    "datetime",
+    "datetime-local"
+  ]),
   inputPlaceholder: PropTypes.string,
-  labelText: PropTypes.string.isRequired,
   inputDesc: PropTypes.string,
+  inputValue: PropTypes.string,
   changeText: PropTypes.func,
   changeFocus: PropTypes.func,
-  isInvalid: PropTypes.bool
+  isInvalid: PropTypes.bool,
+  labelText: PropTypes.string.isRequired
 };
 
 Input.defaultProps = {

@@ -1,8 +1,10 @@
 # Shopify UX Developer Challenge - Winter 2019
 
-This is a project developed for **UX Developer Intern (Winter 2019)** challenge.
+This is a project developed for the **UX Developer Intern (Winter 2019)** challenge.
 
-Shopify describes a UX Developer as someone who is able to "_write well-structured semantic HTML, build maintainable and scalable CSS and work with modern JavaScript (ES6+, ReactJS)_". It's also important to create high quality experiences for **EVERYONE**. These goals were set as the foundation of this project. You can read more about the decisions I've made to fulfill them on the [Methodology](#Methodology) section.
+Shopify describes a UX Developer as someone who is able to "_write well-structured semantic HTML, build maintainable and scalable CSS and work with modern JavaScript (ES6+, ReactJS)_". It's also important to create high quality experiences for **EVERYONE**.
+
+These goals were set as the foundation of this project. You can read more about the decisions I've made to fulfill them on the [Methodology](#Methodology) section.
 
 ## Table of Contents
 
