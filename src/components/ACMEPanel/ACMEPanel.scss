@@ -32,6 +32,9 @@
   width: fit-content;
   background: $purple-gradient;
   padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include border-radius(10px);
 }
 .ACMELogo {

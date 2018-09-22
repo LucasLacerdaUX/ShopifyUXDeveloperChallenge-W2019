@@ -18,6 +18,10 @@
   color: $dark-purple;
   font-size: 1rem;
   padding: 0.75rem 3.5rem;
+  min-width: 11rem;
+  max-width: 100%;
+  height: 2.75rem;
+
   @include border-radius(99px);
 
   &:focus {
@@ -43,6 +47,7 @@
   padding: 1rem;
   background: $dark-purple;
   color: $white;
+  height: 3.25rem;
   @include border-radius(0 0 $form-border-radius $form-border-radius);
   font-size: 1.1rem;
 

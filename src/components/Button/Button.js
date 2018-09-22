@@ -21,18 +21,19 @@ const Button = ({ loading, btnType, btnStyle, btnAction, children }) => {
 };
 
 Button.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  children: PropTypes.node,
+  loading: PropTypes.bool,
   btnType: PropTypes.oneOf(["button", "submit", "reset"]),
   btnStyle: PropTypes.oneOf(["DefaultButton", "FormButton"]),
-  btnAction: PropTypes.func
+  btnAction: PropTypes.func,
+  children: PropTypes.node
 };
 
 Button.defaultProps = {
-  children: "",
-  btnStyle: "DefaultButton",
+  loading: false,
   btnType: "button",
-  btnAction: null
+  btnStyle: "DefaultButton",
+  btnAction: null,
+  children: ""
 };
 
 export default Button;

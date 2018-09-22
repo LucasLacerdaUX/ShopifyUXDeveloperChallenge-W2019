@@ -37,7 +37,7 @@ class LogoutPanel extends PureComponent {
             <h2>{mainTitle}</h2>
             <h3>{mainDesc}</h3>
           </div>
-          <Button btnType="submit" loading={loading} btnAction={btnAction}>
+          <Button btnType="button" loading={loading} btnAction={btnAction}>
             {btnText}
           </Button>
         </div>

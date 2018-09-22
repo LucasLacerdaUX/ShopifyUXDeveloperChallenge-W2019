@@ -3,7 +3,11 @@
 .SocialLink {
   display: block;
   background: $light-purple;
-  padding: 9px;
+  height: 2.25rem;
+  width: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   margin: 0.65rem;
   @include transition(background, 0.3s, cubic-bezier(0.445, 0.05, 0.55, 0.95));

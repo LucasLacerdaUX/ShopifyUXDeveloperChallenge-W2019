@@ -20,13 +20,14 @@ html {
 
 html,
 body {
+  height: 100%;
+  min-height: 100%; /* for firefox */
   width: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 *,
@@ -42,5 +43,5 @@ body {
 
 #app {
   display: flex;
-  flex: 1;
+  min-height: 100%;
 }
