@@ -22,7 +22,7 @@ A text field is a HTML attribute that the user can type into. It currently suppo
 1. Import the component:
 
 ```javascript
-import CustomCheckbox from "../components/Form/Input/Input/";
+import Input from "../components/Form/Input/Input/";
 ```
 
 2. Add the JSX code:
