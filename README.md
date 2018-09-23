@@ -21,7 +21,8 @@ These goals were set as the foundation of this project. You can read more about 
   - 6.1. [Accessibility](#Accessibility)
   - 6.2. [Form Validation](#FormValidation)
   - 6.3. [Components](#Components)
-- 7. [References](#References)
+- 7. [Technology Stack](#TechStack)
+- 8. [References](#References)
 
 ## 1. <a name='Demo'></a>Demo
 
