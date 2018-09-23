@@ -11,7 +11,7 @@ class LoginPanel extends Component {
           autoCompleteProp: "off",
           type: "text",
           placeholder: "username",
-          label: "Enter your username",
+          label: "Enter your username (required)",
           description:
             "Your username is expected to be between 6 and 24 characters"
         },
@@ -30,13 +30,14 @@ class LoginPanel extends Component {
           autoCompleteProp: "off",
           type: "password",
           placeholder: "password",
-          label: "Enter your password",
+          label: "Enter your password (required)",
           description:
             "Your password is expected to be between 8 and 24 characters"
         },
         value: "",
         valid: false,
         validation: {
+          required: true,
           minCh: 8,
           maxCh: 24,
           errorMsg: "password must be between 8 and 24 characters."

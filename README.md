@@ -103,6 +103,27 @@ The components built on this project are intended to be reusable. Not only can t
 
 Each component folder contains its own documentation.
 
-## 7. <a name='References'></a>References
+## 7. <a name='TechStack'></a>Technology Stack
 
-TODO: Add references.
+- React
+- SASS
+- ESLint w/ Airbnb style guide + Prettier
+- Parcel Bundler (_CodeSandbox does not support SASS on Webpack yet_)
+
+## 8. <a name='References'></a>References
+
+**Techiniques for WCAG 2.0**
+
+1. [G83: Providing text descriptions to identify required fields that were not completed](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/G83)
+2. [G85 - Providing a text description when user input falls outside the required format or values](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/G85)
+3. [ARIA19 - Using ARIA role=alert or Live Regions to Identify Errors](https://www.w3.org/TR/WCAG20-TECHS/ARIA19.html)
+4. [ARIA21: Using Aria-Invalid to Indicate An Error Field](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/ARIA21)
+5. [G131: Providing descriptive labels](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/G131)
+6. [ARIA1: Using the aria-describedby property to provide a descriptive label for user interface controls](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/ARIA1)
+7. [G89: Providing expected data format and example](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/G89)
+8. [H44: Using label elements to associate text labels with form controls](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/H44)
+9. [SCR18: Providing client-side validation and alert](https://www.w3.org/WAI/GL/2016/WD-WCAG20-TECHS-20160105/SCR18)
+
+**Other**
+
+10. [Shopify Polaris - Error Messages (Form Validation)](https://polaris.shopify.com/patterns/error-messages#section-form-validation)
