@@ -12,12 +12,12 @@ This is the general button component for the AcmeStack page. It's used both insi
 | _btnAction_ | `func`                                 | `null`            |           | The `onclick` function of the button.                                                                                          |
 | _children_  | `node`                                 | `""`              |           | Content inside the button when `loading` is set to `false`                                                                     |
 
-## Usage Samples
+## Usage Exampless
 
 1. Import the component:
 
 ```javascript
-import Button from "../components/Button/Button";
+import Button from "../components/Button";
 ```
 
 2. Add the JSX code:

@@ -1,6 +1,6 @@
-@import "../../../styles/global.scss";
+@import "../../styles/global.scss";
 
-.SocialLink {
+.CircleButton {
   display: block;
   background: $light-purple;
   height: 2.25rem;
@@ -23,8 +23,11 @@
     outline: none;
     @include box-shadow(0, 0, 20px, rgba($dark-purple, 0.5));
   }
-  svg {
+  svg,
+  img {
     width: 16px;
+  }
+  svg {
     fill: $dark-purple;
   }
 }

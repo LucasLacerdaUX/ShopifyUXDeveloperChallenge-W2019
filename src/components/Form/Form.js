@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Form.scss";
-import Input from "./Input/Input";
-import Button from "../Button/Button";
-import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
-import LiveError from "../LiveError/LiveError";
+import Input from "../Input";
+import Button from "../Button";
+import CustomCheckbox from "../CustomCheckbox";
+import LiveError from "../LiveError";
 
-const LoginForm = props => {
+const Form = props => {
   const {
     fields,
     formSubmit,
@@ -52,7 +52,7 @@ const LoginForm = props => {
   return (
     <React.Fragment>
       <div className="FormWrapper">
-        <form className="LoginForm" onSubmit={formSubmit}>
+        <form className="Form" onSubmit={formSubmit}>
           {inputSet}
           <Button btnStyle="FormButton" loading={loading} btnType="submit">
             login
@@ -71,7 +71,7 @@ const LoginForm = props => {
   );
 };
 
-LoginForm.propTypes = {
+Form.propTypes = {
   fields: PropTypes.object.isRequired,
   formSubmit: PropTypes.func.isRequired,
   inputChange: PropTypes.func,
@@ -80,11 +80,11 @@ LoginForm.propTypes = {
   errorRenderKey: PropTypes.number
 };
 
-LoginForm.defaultProps = {
+Form.defaultProps = {
   inputChange: null,
   inputBlur: null,
   loading: false,
   errorRenderKey: 0
 };
 
-export default LoginForm;
+export default Form;

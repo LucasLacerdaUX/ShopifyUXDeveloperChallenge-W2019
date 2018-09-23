@@ -19,7 +19,7 @@ const Input = ({
       {labelText}
     </label>
     <input
-      className={isInvalid && "invalid"}
+      className={isInvalid ? "invalid" : null}
       type={inputType}
       name={inputName}
       id={inputName}

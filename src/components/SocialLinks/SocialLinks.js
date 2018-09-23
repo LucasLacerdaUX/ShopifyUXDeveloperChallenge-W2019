@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./SocialLinks.scss";
-import SocialLink from "./SocialLink/SocialLink";
+import CircleButton from "../CircleButton";
 
-const SocialLinks = () => {
+const SocialLinks = ({ labelText }) => {
   const SocialMediaLinks = {
     Google: {
       desc: "Login using your Google account.",
@@ -48,20 +49,28 @@ const SocialLinks = () => {
   const SocialMedia = Object.keys(SocialMediaLinks).map(website => {
     const siteInfo = SocialMediaLinks[website];
     return (
-      <SocialLink key={website} socialId={website} socialDesc={siteInfo.desc}>
+      <CircleButton key={website} name={website} desc={siteInfo.desc}>
         {siteInfo.svgCode}
-      </SocialLink>
+      </CircleButton>
     );
   });
 
   return (
     <div className="SocialPanel">
-      <span>or login with</span>
+      <span>{labelText}</span>
       <div className="SocialLinks" id="SocialLinks">
         {SocialMedia}
       </div>
     </div>
   );
+};
+
+SocialLinks.propTypes = {
+  labelText: PropTypes.string
+};
+
+SocialLinks.defaultProps = {
+  labelText: ""
 };
 
 export default SocialLinks;

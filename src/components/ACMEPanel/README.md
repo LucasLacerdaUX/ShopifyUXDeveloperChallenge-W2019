@@ -8,12 +8,12 @@ With the help of Flexbox `column-reverse`, the wrapping containter can turn it i
 
 There are no customization props available on this component.
 
-## Usage Samples
+## Usage Exampless
 
 1. Import the component:
 
 ```javascript
-import ACMEPanel from "../components/ACMEPanel/ACMEPanel";
+import ACMEPanel from "../components/ACMEPanel";
 ```
 
 1. Add the JSX code:

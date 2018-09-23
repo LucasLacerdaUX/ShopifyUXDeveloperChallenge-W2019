@@ -13,13 +13,13 @@
     margin-top: 0;
   }
 }
-.LoginForm {
-  @include box-shadow(0, 0, 20px, rgba(black, 0.2));
+.Form {
   display: flex;
   flex-direction: column;
-  @include border-radius(10px);
   width: 100%;
   margin-bottom: 0;
+  @include box-shadow(0, 0, 20px, rgba(black, 0.2));
+  @include border-radius(10px);
 }
 
 .BelowForm {

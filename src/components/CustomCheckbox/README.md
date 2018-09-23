@@ -10,12 +10,12 @@ Custom checkbox input element.
 | _fieldDescription_ | `string` | `null`       |           | Description of the checkbox for assistive technologies. It's linked to the checkbox by the `aria-describedby` attribute. It's visually hidden by default. |
 | _children_         | `node`   | `""`         |           | Checkbox label content                                                                                                                                    |
 
-## Usage Samples
+## Usage Exampless
 
 1. Import the component:
 
 ```javascript
-import CustomCheckbox from "../components/CustomCheckbox/CustomCheckbox";
+import CustomCheckbox from "../components/CustomCheckbox";
 ```
 
 2. Add the JSX code:

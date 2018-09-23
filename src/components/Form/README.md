@@ -62,12 +62,12 @@ fields: {
 
 If you passe this as props to the Form component by using the `fields` prop, it will automatically render two inputs and automatically display the `errorMsg` of invalid fields.
 
-## Usage Sample
+## Usage Examples
 
 1. Import the component:
 
 ```javascript
-import Button from "../components/Button/Button";
+import Button from "../components/Button";
 ```
 
 2. Add the JSX code and make sure to create the validation and submit functions in your code.

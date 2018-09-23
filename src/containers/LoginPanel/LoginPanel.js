@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import LoginForm from "../../components/Form/Form";
-import SocialLinks from "../../components/SocialLinks/SocialLinks";
-import LogoutPanel from "../../components/LogoutPanel/LogoutPanel";
+import { Form, SocialLinks, LogoutPanel } from "../../components";
 import "./LoginPanel.scss";
 
 class LoginPanel extends Component {
@@ -197,7 +195,7 @@ class LoginPanel extends Component {
     const { fields, loading, formErrorCount, loggedIn } = this.state;
     const renderLogin = (
       <div className="LoginPanel">
-        <LoginForm
+        <Form
           fields={fields}
           inputChange={this.handleInputChanged}
           inputBlur={this.handleInputBlur}
@@ -205,7 +203,7 @@ class LoginPanel extends Component {
           loading={loading}
           errorRenderKey={formErrorCount}
         />
-        <SocialLinks />
+        <SocialLinks labelText="or login with" />
       </div>
     );
     const renderLogout = (

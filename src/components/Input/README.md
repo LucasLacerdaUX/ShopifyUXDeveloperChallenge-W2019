@@ -17,12 +17,12 @@ A text field is a HTML attribute that the user can type into. It currently suppo
 | _labelText_        | `string`                                                                                                                      |              | ✓         | Input label content for assistive technologies. It's visually hidden by default.                                       |
 | _..._              |                                                                                                                               |              |           | You can add any other HTML props to the input like `required`, `autoFocus`, `aria-elements`, etc.                      |
 
-## Usage Samples
+## Usage Exampless
 
 1. Import the component:
 
 ```javascript
-import Input from "../components/Form/Input/Input/";
+import Input from "../components/Form/Input/";
 ```
 
 2. Add the JSX code:
